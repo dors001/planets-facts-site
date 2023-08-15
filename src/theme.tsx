@@ -22,27 +22,23 @@ const theme = extendTheme({
     h1: {
       fontSize: ["4rem", "4.8rem", "8rem"],
       fontWeight: "500",
-      lineHeight: "10.3rem",
       fontFamily: "antonio, sans-serif",
     },
     h2: {
       fontSize: ["2rem", "2.4rem", "4rem"],
       fontWeight: "500",
-      lineHeight: "5.2rem",
       letterSpacing: "-1.5px",
       fontFamily: "antonio, sans-serif",
     },
     h3: {
       fontSize: ["0.9rem", "0.9rem", "1.2rem"],
       fontWeight: "600",
-      lineHeight: "2.5rem",
       letterSpacing: "2.6px",
       fontFamily: "spartan, sans-serif",
     },
     h4: {
       fontSize: ["1.5rem", "1.1rem", "1.1rem"],
       fontWeight: "600",
-      lineHeight: "2.5rem",
       letterSpacing: "1px",
       fontFamily: "spartan, sans-serif",
     },
