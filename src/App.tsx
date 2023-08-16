@@ -15,8 +15,10 @@ import Logo from "./Components/Logo";
 import NavBar from "./Components/NavBar";
 import InfoButtons from "./Components/InfoButtons";
 import PlanetImage from "./Components/PlanetImage";
+import PlanetInfo from "./Components/PlanetInfo";
 
 function App() {
+  const lorem =" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem obcaecati accusantium consectetur ducimus laboriosam, iure dignissimos optio quas ullam distinctio architecto facere adipisci pariatur. Quos dolores maxime consequuntur quidem esse. Iure porro, ducimus fugiat nemo ullam quaerat, quibusdam recusandae consectetur laboriosam aliquid velit rem sed excepturi sint doloremque praesentium minima architecto illo veritatis. Veritatis aliquam aliquid, mollitia quod similique aspernatur!"
   return (
     <>
       <VStack>
@@ -56,17 +58,7 @@ function App() {
           >
             <Box className="facts-container" margin="1rem">
               <PlanetImage />
-              <Box>
-                <Box textStyle="h1">{"mercury".toUpperCase()}</Box>
-                <Text textStyle="body" marginBottom="3rem">
-                  Mercury is the smallest planet in the Solar System and the closest
-                  to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
-                  shortest of all the Sun's planets. Mercury is one of four
-                  terrestrial planets in the Solar System, and is a rocky body like
-                  Earth.
-                </Text>
-                <Link textStyle="body">Source</Link>
-              </Box>
+              <PlanetInfo planetName="Mercury" planetInfo={lorem} source="Wikipedia"/>
               <Box className="planet-facts">
                 <Flex className="planet-facts--fact">
                   <Text textStyle="body">{"rotation time".toUpperCase()}</Text>

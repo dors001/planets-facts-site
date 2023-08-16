@@ -116,3 +116,21 @@
     height: 290px;
   }
 }
+
+/* Planet Info */
+
+.planet-info--container {
+  margin: 1rem auto;
+}
+
+.planet-info--title {
+  margin: 1rem auto;
+}
+
+.planet-info--content {
+  margin: 2rem auto;
+}
+
+.planet-info--source {
+  margin: 2rem auto;
+}
