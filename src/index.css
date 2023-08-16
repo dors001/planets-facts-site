@@ -95,6 +95,24 @@
 
 /* Planet Image */
 
+.planet-img--container {
+  width: 100%;
+}
+
 .planet-img {
-  margin: 9.5rem 13.5rem;
+  height: 111px;
+  margin: 6rem auto;
+}
+
+@media screen and (min-width: 768px) {
+  .planet-img{
+    height: 184px;
+    margin: 8rem auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .planet-img{
+    height: 290px;
+  }
 }
