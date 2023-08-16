@@ -1,4 +1,4 @@
-import { Text, Flex } from "@chakra-ui/react";
+import { Text, Flex, Show } from "@chakra-ui/react";
 
 interface Props {
   factTitle: string;
@@ -9,8 +9,12 @@ const Fact = ({ factTitle, factNumbers }: Props) => {
   return (
     <>
       <Flex className="fact--container">
-        <Text textStyle="body">{factTitle}</Text>
-        <Text textStyle="h2">{factNumbers}</Text>
+        <Text className="fact--content" textStyle="h3">
+          {factTitle}
+        </Text>
+        <Text className="fact--content" textStyle="h2">
+          {factNumbers}
+        </Text>
       </Flex>
     </>
   );

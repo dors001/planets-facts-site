@@ -144,6 +144,7 @@
 /* Facts */
 
 .planet-facts--container {
+  flex-direction: column;
   margin: 1rem 2.4rem; 
 }
 
@@ -155,4 +156,37 @@
   justify-content: space-between; 
   align-items: center;
   border: 1px solid #38384f;
+}
+
+@media screen and (min-width: 768px) {
+
+  .planet-facts--container {
+    flex-direction: row;
+    align-content: space-between;
+    margin: 0;
+    gap: 1rem; 
+  }
+
+  .fact--container {
+    flex-direction: column;
+    height: 88px;
+    padding: 1rem 0.5rem;
+  }
+
+  .fact--content {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+
+  .fact--container {
+    flex-direction: column;
+    height: 128px;
+    padding: 2rem 1.5rem;
+  }
+
 }
