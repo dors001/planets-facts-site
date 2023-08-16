@@ -16,6 +16,7 @@ import NavBar from "./Components/NavBar";
 import InfoButtons from "./Components/InfoButtons";
 import PlanetImage from "./Components/PlanetImage";
 import PlanetInfo from "./Components/PlanetInfo";
+import Fact from "./Components/Fact";
 
 function App() {
   const lorem =" Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem obcaecati accusantium consectetur ducimus laboriosam, iure dignissimos optio quas ullam distinctio architecto facere adipisci pariatur. Quos dolores maxime consequuntur quidem esse. Iure porro, ducimus fugiat nemo ullam quaerat, quibusdam recusandae consectetur laboriosam aliquid velit rem sed excepturi sint doloremque praesentium minima architecto illo veritatis. Veritatis aliquam aliquid, mollitia quod similique aspernatur!"
@@ -59,23 +60,11 @@ function App() {
             <Box className="facts-container" margin="1rem">
               <PlanetImage />
               <PlanetInfo planetName="Mercury" planetInfo={lorem} source="Wikipedia"/>
-              <Box className="planet-facts">
-                <Flex className="planet-facts--fact">
-                  <Text textStyle="body">{"rotation time".toUpperCase()}</Text>
-                  <Text textStyle="h2">58.6 DAYS</Text>
-                </Flex>
-                <Flex className="planet-facts--fact">
-                  <Text textStyle="body">{"rotation time".toUpperCase()}</Text>
-                  <Text textStyle="h2">58.6 DAYS</Text>
-                </Flex>
-                <Flex className="planet-facts--fact">
-                  <Text textStyle="body">{"rotation time".toUpperCase()}</Text>
-                  <Text textStyle="h2">58.6 DAYS</Text>
-                </Flex>
-                <Flex className="planet-facts--fact">
-                  <Text textStyle="body">{"rotation time".toUpperCase()}</Text>
-                  <Text textStyle="h2">58.6 DAYS</Text>
-                </Flex>
+              <Box className="planet-facts--container">
+                <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
+                <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
+                <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
+                <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
               </Box>
             </Box>
           </Grid>
