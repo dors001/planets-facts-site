@@ -4,14 +4,15 @@ import {
   VStack,
   Link,
   Show,
-  Button,
   Image,
   Text,
+  Divider,
 } from "@chakra-ui/react";
 import "./App.css";
 import "./index.css";
 import Logo from "./Components/Logo";
 import NavBar from "./Components/NavBar";
+import InfoButtons from "./Components/InfoButtons";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <NavBar />
             </Flex>
           </Show>
-          <Show breakpoint="(min-width: 480px) and (max-width: 1023px)">
+          <Show breakpoint="(min-width: 426px) and (max-width: 1023px)">
             <Flex className="header" flexDirection="column">
               <Logo />
               <NavBar />
@@ -36,17 +37,15 @@ function App() {
               <NavBar />
             </Flex>
           </Show>
-          <Box className="info-buttons">
-            <Button textStyle="h3" className="info-buttons--button">
-              {"overview".toUpperCase()}
-            </Button>
-            <Button textStyle="h3" className="info-buttons--button">
-              {"structure".toUpperCase()}
-            </Button>
-            <Button textStyle="h3" className="info-buttons--button">
-              {"surface".toUpperCase()}
-            </Button>
-          </Box>
+          <Show breakpoint="(max-width: 767px)">
+            <InfoButtons />
+          </Show>
+          <Show breakpoint="(min-width: 768px) and (max-width: 1023px)">
+            <InfoButtons />
+          </Show>
+          <Show above="lg">
+            <InfoButtons />
+          </Show>
           <Image className="planet-img" src="./src/assets/planet-mercury.svg" />
           <Box>
             <Box textStyle="h1">{"mercury".toUpperCase()}</Box>

@@ -4,14 +4,14 @@ import "../index.css";
 const Logo = () => {
   return (
     <>
-      <Show breakpoint="(min-width: 480px) and (max-width: 1023px)">
+      <Show breakpoint="(min-width: 426px) and (max-width: 1023px)">
         <Box className="logo">
           <Text className="logo--text" textStyle="h2">
             THE PLANETS
           </Text>
         </Box>
       </Show>
-      <Show breakpoint="(max-width: 480px)">
+      <Show breakpoint="(max-width: 425px)">
         <Box className="logo">
           <Text className="logo--text" textStyle="h2" float="left">
             THE PLANETS
@@ -20,7 +20,12 @@ const Logo = () => {
       </Show>
       <Show breakpoint="(min-width: 1024px)">
         <Box className="logo">
-          <Text className="logo--text" textStyle="h2" float="left" marginLeft="2rem">
+          <Text
+            className="logo--text"
+            textStyle="h2"
+            float="left"
+            marginLeft="2rem"
+          >
             THE PLANETS
           </Text>
         </Box>

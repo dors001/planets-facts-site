@@ -18,7 +18,7 @@ import MenuItems from "./MenuItems";
 const NavBar = () => {
   return (
     <>
-      <Show below="sm">
+      <Show breakpoint="(max-width: 425px)">
         <Menu>
           <MenuButton
             className="nav--btn"
@@ -69,7 +69,7 @@ const NavBar = () => {
           </MenuList>
         </Menu>
       </Show>
-      <Show breakpoint="(min-width: 480px) and (max-width: 1023px)">
+      <Show breakpoint="(min-width: 426px) and (max-width: 1023px)">
         <Box className="nav">
           <Flex className="nav--links" textStyle="body" gap={4}>
             <Link>{"mercury".toUpperCase()}</Link>
