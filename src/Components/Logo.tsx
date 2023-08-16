@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <>
       <Box className="logo">
-        <Text className="logo--text">THE PLANETS</Text>
+        <Text className="logo--text" textStyle="h2">THE PLANETS</Text>
       </Box>
     </>
   );

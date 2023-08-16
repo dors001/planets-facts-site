@@ -18,24 +18,24 @@ function App() {
     <>
       <VStack>
         <Show>
-          <Flex className="header">
-            <Logo />
-            <Flex className="nav" textStyle="body">
-              <Show above="lg">
-                <Link>{"mercury".toUpperCase()}</Link>
-                <Link>{"venus".toUpperCase()}</Link>
-                <Link>{"earth".toUpperCase()}</Link>
-                <Link>{"mars".toUpperCase()}</Link>
-                <Link>{"jupiter".toUpperCase()}</Link>
-                <Link>{"saturn".toUpperCase()}</Link>
-                <Link>{"uranus".toUpperCase()}</Link>
-                <Link>{"neptune".toUpperCase()}</Link>
-              </Show>
-              <Show>
-                <NavBar />
-              </Show>
+          <Show breakpoint="(max-width: 425px)">
+            <Flex className="header">
+              <Logo />
+              <NavBar />
             </Flex>
-          </Flex>
+          </Show>
+          <Show breakpoint="(min-width: 480px) and (max-width: 1023px)">
+            <Flex className="header" flexDirection="column">
+              <Logo />
+              <NavBar />
+            </Flex>
+          </Show>
+          <Show breakpoint="(min-width: 1024px)">
+            <Flex className="header">
+              <Logo />
+              <NavBar />
+            </Flex>
+          </Show>
           <Box className="info-buttons">
             <Button textStyle="h3" className="info-buttons--button">
               {"overview".toUpperCase()}
