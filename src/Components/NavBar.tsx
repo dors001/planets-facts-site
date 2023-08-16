@@ -13,6 +13,8 @@ import {
 import theme from "../theme";
 import MenuItems from "./MenuItems";
 
+//TODO: add routing to different pages
+
 const NavBar = () => {
   return (
     <>
@@ -67,9 +69,9 @@ const NavBar = () => {
           </MenuList>
         </Menu>
       </Show>
-      <Show breakpoint="(min-width: 480px)">
+      <Show breakpoint="(min-width: 480px) and (max-width: 1023px)">
         <Box className="nav">
-          <Flex className="nav--links" textStyle="body">
+          <Flex className="nav--links" textStyle="body" gap={4}>
             <Link>{"mercury".toUpperCase()}</Link>
             <Link>{"venus".toUpperCase()}</Link>
             <Link>{"earth".toUpperCase()}</Link>
@@ -81,6 +83,20 @@ const NavBar = () => {
           </Flex>
         </Box>
         <Divider />
+      </Show>
+      <Show above="lg">
+        <Box className="nav">
+          <Flex className="nav--links" textStyle="body" gap={8}>
+            <Link>{"mercury".toUpperCase()}</Link>
+            <Link>{"venus".toUpperCase()}</Link>
+            <Link>{"earth".toUpperCase()}</Link>
+            <Link>{"mars".toUpperCase()}</Link>
+            <Link>{"jupiter".toUpperCase()}</Link>
+            <Link>{"saturn".toUpperCase()}</Link>
+            <Link>{"uranus".toUpperCase()}</Link>
+            <Link>{"neptune".toUpperCase()}</Link>
+          </Flex>
+        </Box>
       </Show>
     </>
   );
