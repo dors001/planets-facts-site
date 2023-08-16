@@ -8,12 +8,14 @@ import PlanetImage from "./Components/PlanetImage";
 import PlanetInfo from "./Components/PlanetInfo";
 import Fact from "./Components/Fact";
 
+//TODO: move Logo and NavBar into a Header component
 function App() {
   const lorem =
     " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem obcaecati accusantium consectetur ducimus laboriosam, iure dignissimos optio quas ullam distinctio architecto facere adipisci pariatur. Quos dolores maxime consequuntur quidem esse. Iure porro, ducimus fugiat nemo ullam quaerat, quibusdam recusandae consectetur laboriosam aliquid velit rem sed excepturi sint doloremque praesentium minima architecto illo veritatis. Veritatis aliquam aliquid, mollitia quod similique aspernatur!";
   return (
     <>
       <VStack>
+        
         {/* <Show breakpoint="(max-width: 425px)">
             <Flex className="header">
               <Logo />
