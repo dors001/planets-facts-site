@@ -2,33 +2,25 @@ import {
   Box,
   Flex,
   VStack,
-  Collapse,
   Link,
   Show,
-  useDisclosure,
   Button,
   Image,
   Text,
 } from "@chakra-ui/react";
 import "./App.css";
 import "./index.css";
-import theme from "./theme";
 import Logo from "./Components/Logo";
+import NavBar from "./Components/NavBar";
 
 function App() {
-  const { isOpen, onToggle } = useDisclosure();
-
   return (
     <>
       <VStack>
-        <Show below="sm">
+        <Show>
           <Flex className="header">
             <Logo />
-            <Flex
-              className="nav"
-              backgroundColor={theme.color.brand.bgBlue}
-              textStyle="body"
-            >
+            <Flex className="nav" textStyle="body">
               <Show above="lg">
                 <Link>{"mercury".toUpperCase()}</Link>
                 <Link>{"venus".toUpperCase()}</Link>
@@ -39,18 +31,8 @@ function App() {
                 <Link>{"uranus".toUpperCase()}</Link>
                 <Link>{"neptune".toUpperCase()}</Link>
               </Show>
-              <Show below="lg">
-                <Button onClick={onToggle}>Click Me</Button>
-                <Collapse in={isOpen} animateOpacity>
-                  <Link>{"mercury".toUpperCase()}</Link>
-                  <Link>{"venus".toUpperCase()}</Link>
-                  <Link>{"earth".toUpperCase()}</Link>
-                  <Link>{"mars".toUpperCase()}</Link>
-                  <Link>{"jupiter".toUpperCase()}</Link>
-                  <Link>{"saturn".toUpperCase()}</Link>
-                  <Link>{"uranus".toUpperCase()}</Link>
-                  <Link>{"neptune".toUpperCase()}</Link>
-                </Collapse>
+              <Show>
+                <NavBar />
               </Show>
             </Flex>
           </Flex>

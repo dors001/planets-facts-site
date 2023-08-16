@@ -1,3 +1,17 @@
+:root {
+  --color-bgBlue: "#070724";
+  --color-darkGray: "#38384f";
+  --color-lightGray: "#838391";
+  --color-mercury: "#419ebb";
+  --color-venus: "#eda249";
+  --color-earth: "#6f2ed6";
+  --color-mars: "#d14c32";
+  --color-jupiter: "#d83a34";
+  --color-saturn: "#cd5120";
+  --color-uranus: "#1ec2a4";
+  --color-neptune: "#2d68fo";
+}
+
 #root {
   padding: 0;
 }
@@ -9,15 +23,28 @@
   justify-content: space-between;
 }
 
-.nav {
-  width: 80%;
-  justify-content: space-evenly;
-}
+/* Logo */
 
 .logo {
   height: 8.5rem;
   width: 100%;
   padding: 1.6rem 2.4rem;
+}
+
+/* NavBar */
+
+.nav {
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.nav--menu-list {
+  width: 100vw;
+}
+
+.nav--menu-item {
+  max-width: 90%;
+  margin: 1.5rem 2rem;
 }
 
 .logo--text {
