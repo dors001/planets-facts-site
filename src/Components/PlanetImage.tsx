@@ -1,10 +1,14 @@
 import { Box, Image } from "@chakra-ui/react";
 
-const PlanetImage = () => {
+interface Props {
+  ImgSrc: string;
+}
+
+const PlanetImage = ({ ImgSrc }: Props) => {
   return (
     <>
       <Box className="planet-img--container">
-        <Image className="planet-img" src="./src/assets/planet-mercury.svg" />
+        <Image className="planet-img" src={ImgSrc} />
       </Box>
     </>
   );
