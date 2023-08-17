@@ -9,72 +9,23 @@ enum Topics {
   surfaceDesktop = "surface geology",
 }
 
-enum InfoBtnClass {
-  desktop = "info-buttons--btn_desktop",
-  tablet = "info-buttons--btn_tablet",
-  mobile = "info-buttons--btn_mobile",
-}
-
 const InfoButtons = () => {
   return (
     <>
       <Show breakpoint="(max-width: 767px)">
         <Divider />
         <Flex className="info-buttons">
-          <InfoButton
-            infoBtnClass={InfoBtnClass.mobile}
-            topic={Topics.overview}
-            number=""
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.mobile}
-            topic={Topics.structureMobile}
-            number=""
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.mobile}
-            topic={Topics.surfaceMobile}
-            number=""
-          />
+          <InfoButton topic={Topics.overview} number="" />
+          <InfoButton topic={Topics.structureMobile} number="" />
+          <InfoButton topic={Topics.surfaceMobile} number="" />
         </Flex>
         <Divider />
       </Show>
-      <Show breakpoint="(min-width: 768px) and (max-width: 1023px)">
-        <Flex className="info-buttons" flexDirection="column">
-          <InfoButton
-            infoBtnClass={InfoBtnClass.tablet}
-            topic={Topics.overview}
-            number="01"
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.tablet}
-            topic={Topics.structureDesktop}
-            number="02"
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.tablet}
-            topic={Topics.surfaceDesktop}
-            number="03"
-          />
-        </Flex>
-      </Show>
-      <Show above="lg">
-        <Flex className="info-buttons" flexDirection="column">
-          <InfoButton
-            infoBtnClass={InfoBtnClass.desktop}
-            topic={Topics.overview}
-            number="01"
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.desktop}
-            topic={Topics.structureDesktop}
-            number="02"
-          />
-          <InfoButton
-            infoBtnClass={InfoBtnClass.desktop}
-            topic={Topics.surfaceDesktop}
-            number="03"
-          />
+      <Show above="md">
+        <Flex className="info-buttons">
+          <InfoButton topic={Topics.overview} number="01" />
+          <InfoButton topic={Topics.structureDesktop} number="02" />
+          <InfoButton topic={Topics.surfaceDesktop} number="03" />
         </Flex>
       </Show>
     </>
