@@ -1,13 +1,11 @@
-import { Box, GridItem, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 const PlanetImage = () => {
   return (
     <>
-      <GridItem area="planetImg">
-        <Box className="planet-img--container">
-            <Image className="planet-img" src="./src/assets/planet-mercury.svg" />
-        </Box>
-      </GridItem>
+      <Box className="planet-img--container">
+        <Image className="planet-img" src="./src/assets/planet-mercury.svg" />
+      </Box>
     </>
   );
 };

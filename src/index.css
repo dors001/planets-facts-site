@@ -103,6 +103,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .info-buttons {
+    padding-right: 45px;
+  }
+
   .info-buttons--btn {
     width: 350px;
     height: 48px;
@@ -150,7 +154,7 @@
 }
 
 .planet-info--source {
-  margin: 2rem auto;
+  margin: 4rem auto;
 }
 
 @media screen and (min-width: 768px) {
