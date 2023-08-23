@@ -58,12 +58,26 @@
   justify-content: space-between;
 }
 
-.nav--links {
+.nav--buttons {
   width: 100%;
   justify-content: space-between;
   margin: 4rem 0;
   padding: 0 2.5rem;
 }
+
+.nav--button {
+  size: "lg";
+}
+
+.nav--button:hover {
+  background-color: transparent;
+  border-radius: 0;
+  border-top: 2px solid;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+
 
 .nav--menu-list {
   width: 100vw;

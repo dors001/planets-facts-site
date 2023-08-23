@@ -1,7 +1,7 @@
 import { Box, Image } from "@chakra-ui/react";
 
 interface Props {
-  ImgSrc: string;
+  ImgSrc?: string;
 }
 
 const PlanetImage = ({ ImgSrc }: Props) => {

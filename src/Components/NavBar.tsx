@@ -1,3 +1,4 @@
+import "../index.css";
 import {
   Menu,
   MenuButton,
@@ -6,14 +7,12 @@ import {
   Image,
   Divider,
   Show,
-  Link,
   Flex,
   Box,
+  Button,
 } from "@chakra-ui/react";
 import theme from "../theme";
 import MenuItems from "./MenuItems";
-
-//TODO: add routing to different pages
 
 const NavBar = () => {
   return (
@@ -71,30 +70,174 @@ const NavBar = () => {
       </Show>
       <Show breakpoint="(min-width: 426px) and (max-width: 1023px)">
         <Box className="nav">
-          <Flex className="nav--links" textStyle="body" gap={4}>
-            <Link>{"mercury".toUpperCase()}</Link>
-            <Link>{"venus".toUpperCase()}</Link>
-            <Link>{"earth".toUpperCase()}</Link>
-            <Link>{"mars".toUpperCase()}</Link>
-            <Link>{"jupiter".toUpperCase()}</Link>
-            <Link>{"saturn".toUpperCase()}</Link>
-            <Link>{"uranus".toUpperCase()}</Link>
-            <Link>{"neptune".toUpperCase()}</Link>
+          <Flex className="nav--buttons" textStyle="body" gap={4}>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.mercury,
+              }}
+            >
+              {"mercury".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.venus,
+              }}
+            >
+              {"venus".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.earth,
+              }}
+            >
+              {"earth".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.mars,
+              }}
+            >
+              {"mars".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.jupiter,
+              }}
+            >
+              {"jupiter".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.saturn,
+              }}
+            >
+              {"saturn".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.uranus,
+              }}
+            >
+              {"uranus".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.neptune,
+              }}
+            >
+              {"neptune".toUpperCase()}
+            </Button>
           </Flex>
         </Box>
         <Divider />
       </Show>
       <Show above="lg">
         <Box className="nav">
-          <Flex className="nav--links" textStyle="body" gap={8}>
-            <Link>{"mercury".toUpperCase()}</Link>
-            <Link>{"venus".toUpperCase()}</Link>
-            <Link>{"earth".toUpperCase()}</Link>
-            <Link>{"mars".toUpperCase()}</Link>
-            <Link>{"jupiter".toUpperCase()}</Link>
-            <Link>{"saturn".toUpperCase()}</Link>
-            <Link>{"uranus".toUpperCase()}</Link>
-            <Link>{"neptune".toUpperCase()}</Link>
+          <Flex className="nav--buttons" textStyle="body" gap={8}>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.mercury,
+              }}
+            >
+              {"mercury".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.venus,
+              }}
+            >
+              {"venus".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.earth,
+              }}
+            >
+              {"earth".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.mars,
+              }}
+            >
+              {"mars".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.jupiter,
+              }}
+            >
+              {"jupiter".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.saturn,
+              }}
+            >
+              {"saturn".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.uranus,
+              }}
+            >
+              {"uranus".toUpperCase()}
+            </Button>
+            <Button
+              className="nav--button"
+              bgColor="transparent"
+              size="lg"
+              _hover={{
+                borderTopColor: theme.colors.brand.neptune,
+              }}
+            >
+              {"neptune".toUpperCase()}
+            </Button>
           </Flex>
         </Box>
       </Show>

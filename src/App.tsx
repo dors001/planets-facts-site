@@ -18,8 +18,8 @@ import usePlanets from "./Hooks/usePlanets";
 //TODO: nav button hover will promp upper line with the planet color
 
 function App() {
-  const planet = usePlanets("Mercury");
- 
+  const planet = usePlanets("Venus");
+
   return (
     <>
       <VStack>
@@ -51,13 +51,13 @@ function App() {
             justifyContent="center"
             alignItems="center"
           >
-            <PlanetImage ImgSrc={planet?.images.planet as string}/>
+            <PlanetImage ImgSrc={planet?.images.planet} />
           </GridItem>
           <GridItem area="infoText">
             <PlanetInfo
-              planetName="Mercury"
-              planetInfo={planet?.overview.content as string}
-              source={planet?.overview.source as string}
+              planetName={planet?.name}
+              planetInfo={planet?.overview.content}
+              source={planet?.overview.source}
             />
           </GridItem>
           <Show above="md">
@@ -67,10 +67,16 @@ function App() {
           </Show>
           <GridItem area="facts" margin="3rem 0">
             <Flex className="planet-facts--container">
-              <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
-              <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
-              <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
-              <Fact factTitle="ROTATION TIME" factNumbers="58.6 DAYS" />
+              <Fact factTitle="rotation time" factNumbers={planet?.rotation} />
+              <Fact
+                factTitle="revolution time"
+                factNumbers={planet?.revolution}
+              />
+              <Fact factTitle="radius" factNumbers={planet?.radius} />
+              <Fact
+                factTitle="average temp."
+                factNumbers={planet?.temperature}
+              />
             </Flex>
           </GridItem>
         </Grid>
