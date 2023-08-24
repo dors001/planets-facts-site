@@ -12,7 +12,7 @@ const Logo = () => {
         </Box>
       </Show>
       <Show breakpoint="(max-width: 425px)">
-        <Box className="logo">
+        <Box className="logo" marginLeft="1rem">
           <Text className="logo--text" textStyle="h2" float="left">
             THE PLANETS
           </Text>

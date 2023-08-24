@@ -11,19 +11,20 @@ import {
 interface Props {
   circleBgColor: string;
   planetName: string;
+  onSelectPlanet: (planetName: string) => void;
 }
 
-const MenuItems = ({ circleBgColor, planetName }: Props) => {
+const MenuItems = ({ circleBgColor, planetName, onSelectPlanet }: Props) => {
   return (
     <>
-      <MenuItem className="nav--menu-item">
+      <MenuItem className="nav--menu-item" bgColor="transparent" textStyle="h4">
         <Flex w="100%">
           <Box>
             <Button
+              onClick={() => onSelectPlanet("")}
               leftIcon={
                 <Circle marginRight="1.4rem" size="20px" bg={circleBgColor} />
               }
-              textStyle="h4"
               variant="ghost"
             >
               {planetName.toUpperCase()}
@@ -31,7 +32,7 @@ const MenuItems = ({ circleBgColor, planetName }: Props) => {
           </Box>
           <Spacer />
           <Box>
-            <Image src="../src/assets/icon-chevron.svg" />
+            <Image src="../src/assets/icon-chevron.svg" marginTop="1rem" />
           </Box>
         </Flex>
       </MenuItem>

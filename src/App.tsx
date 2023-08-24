@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Flex, VStack, Grid, Show, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import "./index.css";
@@ -6,7 +7,7 @@ import PlanetImage from "./Components/PlanetImage";
 import PlanetInfo from "./Components/PlanetInfo";
 import Fact from "./Components/Fact";
 import Header from "./Components/Header";
-import usePlanets from "./Hooks/usePlanets";
+import usePlanets, { Planet } from "./Hooks/usePlanets";
 
 //TODO: Make the source site to be anchor text that is equale to the website title (ex: wikipedia)
 //TODO: Set Background and animate it
@@ -18,12 +19,17 @@ import usePlanets from "./Hooks/usePlanets";
 //TODO: nav button hover will promp upper line with the planet color
 
 function App() {
-  const planet = usePlanets("Venus");
+  const [selectedPlanet, setSelectedPlanet] = useState<Planet>();
+
+  const onSelectPlanet = (planetName: string) => {
+    const planetData = usePlanets(planetName);
+    setSelectedPlanet(planetData);
+  };
 
   return (
     <>
       <VStack>
-        <Header />
+        <Header onSelectPlanet={onSelectPlanet} />
         <Show below="sm">
           <InfoButtons />
         </Show>
@@ -51,14 +57,18 @@ function App() {
             justifyContent="center"
             alignItems="center"
           >
-            <PlanetImage ImgSrc={planet?.images.planet} />
+            {selectedPlanet && (
+              <PlanetImage ImgSrc={selectedPlanet?.images.planet} />
+            )}
           </GridItem>
           <GridItem area="infoText">
-            <PlanetInfo
-              planetName={planet?.name}
-              planetInfo={planet?.overview.content}
-              source={planet?.overview.source}
-            />
+            {selectedPlanet && (
+              <PlanetInfo
+                planetName={selectedPlanet?.name}
+                planetInfo={selectedPlanet?.overview.content}
+                source={selectedPlanet?.overview.source}
+              />
+            )}
           </GridItem>
           <Show above="md">
             <GridItem area="infoButtons" margin="auto">
@@ -67,16 +77,27 @@ function App() {
           </Show>
           <GridItem area="facts" margin="3rem 0">
             <Flex className="planet-facts--container">
-              <Fact factTitle="rotation time" factNumbers={planet?.rotation} />
-              <Fact
-                factTitle="revolution time"
-                factNumbers={planet?.revolution}
-              />
-              <Fact factTitle="radius" factNumbers={planet?.radius} />
-              <Fact
-                factTitle="average temp."
-                factNumbers={planet?.temperature}
-              />
+              {selectedPlanet && (
+                <Fact
+                  factTitle="rotation time"
+                  factNumbers={selectedPlanet?.rotation}
+                />
+              )}
+              {selectedPlanet && (
+                <Fact
+                  factTitle="revolution time"
+                  factNumbers={selectedPlanet?.revolution}
+                />
+              )}
+              {selectedPlanet && (
+                <Fact factTitle="radius" factNumbers={selectedPlanet?.radius} />
+              )}
+              {selectedPlanet && (
+                <Fact
+                  factTitle="average temp."
+                  factNumbers={selectedPlanet?.temperature}
+                />
+              )}
             </Flex>
           </GridItem>
         </Grid>

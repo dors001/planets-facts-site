@@ -2,12 +2,16 @@ import { Flex } from "@chakra-ui/react";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 
-const Header = () => {
+interface Props {
+  onSelectPlanet: (planetName: string) => void;
+}
+
+const Header = ({ onSelectPlanet }: Props) => {
   return (
     <>
       <Flex className="header">
         <Logo />
-        <NavBar />
+        <NavBar onSelectPlanet={onSelectPlanet} />
       </Flex>
     </>
   );

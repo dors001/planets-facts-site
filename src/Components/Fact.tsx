@@ -1,4 +1,4 @@
-import { Text, Flex, Show } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 
 interface Props {
   factTitle?: string;

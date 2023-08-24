@@ -77,15 +77,17 @@
   transition-timing-function: ease-in;
 }
 
-
-
 .nav--menu-list {
   width: 100vw;
 }
 
 .nav--menu-item {
   max-width: 90%;
-  margin: 1.5rem 2rem;
+  margin: 1rem;
+}
+
+.nav--menu-item-btn {
+  margin-top: 1rem;
 }
 
 /* Info Buttons */
