@@ -19,8 +19,8 @@ const PlanetInfo = ({ planetName, planetInfo, source }: Props) => {
         </Text>
         <Box className="planet-info--source" textStyle="body">
           <Text display="inline">Source: </Text>
-          <Link href="" fontWeight="bold">
-            {source}
+          <Link href={source} fontWeight="bold">
+            Wikipedia
             <ExternalLinkIcon mx="2" />
           </Link>
         </Box>
