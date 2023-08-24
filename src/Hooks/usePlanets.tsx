@@ -26,9 +26,7 @@ export interface Planet {
 }
 
 const usePlanets = (planetName: string): Planet | undefined => {
-  const planet = data.find((p) =>
-    p.name === planetName ? planetName : "Mercury"
-  );
+  const planet = data.find((p) => p.name === planetName);
   return planet;
 };
 

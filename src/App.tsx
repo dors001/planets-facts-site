@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Flex, VStack, Grid, Show, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import "./index.css";
@@ -9,14 +9,11 @@ import Fact from "./Components/Fact";
 import Header from "./Components/Header";
 import usePlanets, { Planet } from "./Hooks/usePlanets";
 
-//TODO: Make the source site to be anchor text that is equale to the website title (ex: wikipedia)
 //TODO: Set Background and animate it
-//TODO: Fix NavBar on mobile to be full height like the design
 //TODO: set nav buttons to call usePlanets with the planet name
 //TODO: set info buttons to change content text and image according to the parameters
 //TODO: FOCUS info buttons will fill the button with the PLANET color
 //TODO: HOVER info button will fill the button with DARK GRAY color
-//TODO: nav button hover will promp upper line with the planet color
 
 function App() {
   const [selectedPlanet, setSelectedPlanet] = useState<Planet>();
@@ -25,6 +22,10 @@ function App() {
     const planetData = usePlanets(planetName);
     setSelectedPlanet(planetData);
   };
+
+  useEffect(() => {
+    if (!selectedPlanet) onSelectPlanet("Mercury");
+  }, []);
 
   return (
     <>
