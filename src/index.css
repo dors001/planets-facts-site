@@ -12,6 +12,12 @@
   --color-neptune: "#2d68fo";
 }
 
+#background {
+  background-image: url('./assets/background-stars.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #root {
   padding: 0;
 }

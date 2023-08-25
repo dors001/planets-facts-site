@@ -5,6 +5,7 @@ interface Props {
   planetName?: string;
   planetInfo?: string;
   source?: string;
+  inProp: boolean;
 }
 
 const PlanetInfo = ({ planetName, planetInfo, source }: Props) => {
