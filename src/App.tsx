@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Flex, VStack, Grid, Show, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import "./index.css";
-import InfoButtons from "./Components/InfoButtons";
+import theme from "./theme";
+import InfoButtons, { Topics } from "./Components/InfoButtons";
 import PlanetImage from "./Components/PlanetImage";
 import PlanetInfo from "./Components/PlanetInfo";
 import Fact from "./Components/Fact";
@@ -10,18 +11,45 @@ import Header from "./Components/Header";
 import usePlanets, { Planet } from "./Hooks/usePlanets";
 
 //TODO: Set Background and animate it
-//TODO: set nav buttons to call usePlanets with the planet name
-//TODO: set info buttons to change content text and image according to the parameters
 //TODO: FOCUS info buttons will fill the button with the PLANET color
-//TODO: HOVER info button will fill the button with DARK GRAY color
 
 function App() {
   const [selectedPlanet, setSelectedPlanet] = useState<Planet>();
+  const [selectedTopic, setSelectedTopic] = useState<Topics>(Topics.overview);
+  const [selectedImage, setSelectedImage] = useState<string | undefined>("");
+  const [activeTopic, setActiveTopic] = useState<Topics>(Topics.overview);
 
   const onSelectPlanet = (planetName: string) => {
     const planetData = usePlanets(planetName);
     setSelectedPlanet(planetData);
+    setSelectedImage(planetData?.images.planet);
+    setActiveTopic(Topics.overview);
   };
+
+  const setPlanetInfo = (topic: Topics) => {
+    let imageType: string;
+    switch (topic) {
+      case Topics.structure:
+        imageType = "internal";
+        setActiveTopic(Topics.structure);
+        break;
+      case Topics.surface:
+        imageType = "geology";
+        setActiveTopic(Topics.surface);
+        break;
+      default:
+        imageType = "planet";
+        setActiveTopic(Topics.overview);
+    }
+
+    setSelectedImage(
+      selectedPlanet?.images[imageType as keyof typeof selectedPlanet.images]
+    );
+    setSelectedTopic(topic);
+  };
+
+  const planetInfo = selectedPlanet?.[selectedTopic].content || "";
+  const source = selectedPlanet?.[selectedTopic].source || "";
 
   useEffect(() => {
     if (!selectedPlanet) onSelectPlanet("Mercury");
@@ -32,7 +60,15 @@ function App() {
       <VStack>
         <Header onSelectPlanet={onSelectPlanet} />
         <Show below="sm">
-          <InfoButtons />
+          <InfoButtons
+            setInfo={setPlanetInfo}
+            activeTopic={activeTopic}
+            planetColor={
+              selectedPlanet
+                ? theme.colors.brand[selectedPlanet?.name.toLowerCase()]
+                : theme.colors.brand.mercury
+            }
+          />
         </Show>
         <Grid
           templateAreas={{
@@ -58,22 +94,28 @@ function App() {
             justifyContent="center"
             alignItems="center"
           >
-            {selectedPlanet && (
-              <PlanetImage ImgSrc={selectedPlanet?.images.planet} />
-            )}
+            {selectedImage && <PlanetImage ImgSrc={selectedImage} />}
           </GridItem>
           <GridItem area="infoText">
             {selectedPlanet && (
               <PlanetInfo
                 planetName={selectedPlanet?.name}
-                planetInfo={selectedPlanet?.overview.content}
-                source={selectedPlanet?.overview.source}
+                planetInfo={planetInfo}
+                source={source}
               />
             )}
           </GridItem>
           <Show above="md">
             <GridItem area="infoButtons" margin="auto">
-              <InfoButtons />
+              <InfoButtons
+                setInfo={setPlanetInfo}
+                activeTopic={activeTopic}
+                planetColor={
+                  selectedPlanet
+                    ? theme.colors.brand[selectedPlanet?.name.toLowerCase()]
+                    : theme.colors.brand.mercury
+                }
+              />
             </GridItem>
           </Show>
           <GridItem area="facts" margin="3rem 0">

@@ -97,12 +97,14 @@
   margin: 2rem auto;
 }
 
-.info-button--text {
+.info-button--number {
   color:white;
-  float: left; 
   padding-top: 0.5rem; 
   padding-left: 0.5rem;
+  text-align: left;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .info-buttons {
@@ -112,9 +114,17 @@
   .info-buttons--btn {
     width: 281px;
     height: 40px;
-    padding: 0.9rem;
     margin: 1rem auto;
     border: 1px solid white;
+  }
+
+  .info-buttons--btn:hover {
+    background-color: "#38384f"; 
+  }
+
+  .info-button--text {
+    margin-top: 0.5rem;
+    margin-left: 2rem;
   }
 }
 

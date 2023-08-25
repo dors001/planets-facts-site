@@ -166,7 +166,7 @@ const NavBar = ({ onSelectPlanet }: Props) => {
               {"uranus".toUpperCase()}
             </Button>
             <Button
-              onClick={() => onSelectPlanet("Neptun")}
+              onClick={() => onSelectPlanet("Neptune")}
               className="nav--button"
               bgColor="transparent"
               size="lg"
