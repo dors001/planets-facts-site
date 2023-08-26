@@ -29,7 +29,7 @@ const NavBar = ({ onSelectPlanet }: Props) => {
             bgColor="transparent"
             as={IconButton}
             aria-label="Planets"
-            icon={<Image src="../src/assets/icon-hamburger.svg" />}
+            icon={<Image src="/assets/icon-hamburger.svg" />}
           />
           <MenuList
             className="nav--menu-list"

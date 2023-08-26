@@ -32,7 +32,7 @@ const MenuItems = ({ circleBgColor, planetName, onSelectPlanet }: Props) => {
           </Box>
           <Spacer />
           <Box>
-            <Image src="../src/assets/icon-chevron.svg" marginTop="1rem" />
+            <Image src="/assets/icon-chevron.svg" marginTop="1rem" />
           </Box>
         </Flex>
       </MenuItem>
